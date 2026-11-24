@@ -41,7 +41,7 @@ export function StudyMaterialPage({ initialType, onNavigate }: StudyMaterialPage
       : STUDY_MATERIALS.filter((item) => item.type === filter);
 
   return (
-    <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-8 sm:py-12">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <SeoHead
         title="स्टडी मटेरियल: PDF Notes, PYQ, Practice Sets एवं Mock Tests – Sarkari Job Target"
         description="UPSSSC PET, UP Police, SSC, Railway और UPPSC के लिए हिंदी में PDF नोट्स, पिछले वर्षों के प्रश्न-पत्र, प्रैक्टिस सेट और मॉक टेस्ट डाउनलोड करें।"

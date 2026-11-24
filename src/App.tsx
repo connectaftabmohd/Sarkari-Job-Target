@@ -74,7 +74,7 @@ class AppErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState>
 
 function PageLoader() {
   return (
-    <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-16 text-center text-sm text-slate-500">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center text-sm text-slate-500">
       पृष्ठ लोड हो रहा है...
     </div>
   );

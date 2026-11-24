@@ -126,7 +126,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       {/* 1. Hero Section */}
       <section className="border-b border-slate-200 bg-white">
-        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 text-center">
           <div className="flex justify-center mb-4">
             <img
               src="/assets/aistudio/Sarkari_Job_Target_02a57cf7.jfif"
@@ -193,7 +193,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* 2. Popular Categories */}
-      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-12 border-b border-slate-200">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-slate-200">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-7">
           <div>
             <h2 className="text-2xl font-bold text-slate-900">प्रमुख श्रेणियाँ (Popular Categories)</h2>
@@ -251,7 +251,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* 3. Latest Articles (2-column desktop, 1-column mobile) */}
-      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-12 border-b border-slate-200">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-slate-200">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-7">
           <div>
             <h2 className="text-2xl font-bold text-slate-900">नवीनतम लेख (Latest Articles)</h2>
@@ -280,7 +280,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* 4. Important Study Materials */}
-      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-12 border-b border-slate-200">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-slate-200">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-7">
           <div>
             <h2 className="text-2xl font-bold text-slate-900">
@@ -335,7 +335,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* 5. Current Affairs Section + 6. Popular Posts */}
-      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-12 border-b border-slate-200">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-slate-200">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
           {/* Current Affairs Section */}
           <div className="lg:col-span-7">
@@ -476,7 +476,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* 7. Newsletter Subscription */}
-      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 pt-12">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         <div className="border border-slate-200 rounded-lg bg-slate-50 p-6 sm:p-10 text-center">
           <h2 className="text-2xl font-bold text-slate-900">
             दैनिक परीक्षा अपडेट और फ्री नोट्स ईमेल पर पाएं

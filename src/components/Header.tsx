@@ -43,19 +43,19 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-slate-200">
-      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 h-20 lg:h-24 flex items-center justify-between gap-4 lg:gap-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-4">
         {/* Brand Zone */}
         <a
           href="/"
           onClick={(e) => handleLinkClick(e, '/')}
-          className="flex items-center gap-3 whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C81E1E] rounded"
+          className="flex items-center gap-2.5 whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C81E1E] rounded"
         >
           <img
             src="/assets/aistudio/Sarkari_Job_Target_02a57cf7.jfif"
             alt="Sarkari Job Target Logo"
-            className="w-12 h-12 lg:w-16 lg:h-16 object-contain rounded bg-white shrink-0"
+            className="w-11 h-11 sm:w-12 sm:h-12 object-contain rounded bg-white shrink-0"
           />
-          <span className="text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-slate-900">
+          <span className="text-lg sm:text-xl font-bold tracking-tight text-slate-900">
             Sarkari Job <span className="text-[#C81E1E]">Target</span>
           </span>
         </a>
@@ -63,7 +63,7 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
         {/* Desktop Navigation */}
         <nav
           aria-label="मुख्य नेविगेशन"
-          className="hidden xl:flex items-center gap-6 text-[15px] font-semibold text-slate-700"
+          className="hidden xl:flex items-center gap-5 text-[14px] font-semibold text-slate-700"
         >
           {NAV_ITEMS.map((item) => {
             const isActive =
@@ -113,10 +113,10 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
 
       {/* Expandable Search Bar */}
       {searchOpen && (
-        <div className="border-t border-slate-200 bg-slate-50 px-4 sm:px-8 lg:px-12 xl:px-16 py-4">
+        <div className="border-t border-slate-200 bg-slate-50 px-4 sm:px-6 lg:px-8 py-4">
           <form
             onSubmit={handleSearchSubmit}
-            className="max-w-4xl mx-auto flex items-center gap-2.5"
+            className="max-w-3xl mx-auto flex items-center gap-2.5"
             role="search"
           >
             <label htmlFor="header-search-input" className="sr-only">

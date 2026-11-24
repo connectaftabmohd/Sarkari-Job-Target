@@ -197,7 +197,7 @@ export function ArticlePage({ slug, onNavigate }: ArticlePageProps) {
 
         {/* Featured Image */}
         <figure className="mb-8">
-          <div className="aspect-[16/10] w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-100">
+          <div className="aspect-[16/9] max-h-[340px] w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-100">
             <ImageWithFallback
               src={article.featuredImage}
               alt={article.featuredImageAlt}

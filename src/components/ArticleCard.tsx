@@ -13,14 +13,14 @@ export function ArticleCard({ article, onNavigate }: ArticleCardProps) {
   const articlePath = `/article/${article.slug}`;
 
   return (
-    <article className="group flex flex-col bg-white border border-slate-200 rounded-lg overflow-hidden hover:border-slate-300 transition-colors duration-150">
+    <article className="group flex flex-col lg:flex-row bg-white border border-slate-200 rounded-lg overflow-hidden hover:border-slate-300 transition-colors duration-150">
       <a
         href={articlePath}
         onClick={(e) => {
           e.preventDefault();
           onNavigate(articlePath);
         }}
-        className="block h-44 sm:h-48 w-full overflow-hidden bg-slate-100 shrink-0"
+        className="block h-44 md:h-40 lg:h-auto lg:w-48 xl:w-52 w-full overflow-hidden bg-slate-100 shrink-0"
       >
         <ImageWithFallback
           src={article.featuredImage}
@@ -29,9 +29,9 @@ export function ArticleCard({ article, onNavigate }: ArticleCardProps) {
         />
       </a>
 
-      <div className="flex-1 p-5 flex flex-col">
+      <div className="flex-1 min-w-0 p-4 sm:p-5 flex flex-col">
         {/* Clean Unboxed Metadata */}
-        <div className="flex flex-wrap items-center gap-2 text-xs text-slate-600 mb-2.5">
+        <div className="flex flex-wrap items-center gap-2 text-xs text-slate-600 mb-2">
           {category && (
             <a
               href={`/category/${category.slug}`}
@@ -52,7 +52,7 @@ export function ArticleCard({ article, onNavigate }: ArticleCardProps) {
           <span className="tabular-nums">{article.readTimeMinutes} मिनट पठन</span>
         </div>
 
-        <h3 className="text-lg font-bold text-slate-900 leading-snug mb-2 group-hover:text-[#C81E1E] transition-colors">
+        <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug mb-2 group-hover:text-[#C81E1E] transition-colors">
           <a
             href={articlePath}
             onClick={(e) => {
@@ -64,7 +64,7 @@ export function ArticleCard({ article, onNavigate }: ArticleCardProps) {
           </a>
         </h3>
 
-        <p className="text-sm text-slate-600 leading-relaxed line-clamp-3 mb-4 flex-1">
+        <p className="text-sm text-slate-600 leading-relaxed line-clamp-2 mb-4 flex-1">
           {article.excerpt}
         </p>
 

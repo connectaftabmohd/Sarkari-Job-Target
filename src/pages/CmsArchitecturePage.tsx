@@ -22,7 +22,7 @@ const POST_SCHEMA_FIELDS: CmsSchemaField[] = [
 
 export function CmsArchitecturePage({ onNavigate }: CmsArchitecturePageProps) {
   return (
-    <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-8 sm:py-12">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <SeoHead
         title="CMS एवं एडमिन आर्किटेक्चर (Demo Blueprint) – Sarkari Job Target"
         description="Sarkari Job Target के भविष्य के CMS व डेटाबेस एकीकरण के लिए डेटा मॉडल और सामग्री प्रबंधन संरचना।"
