@@ -20,7 +20,7 @@ export function ArticleCard({ article, onNavigate }: ArticleCardProps) {
           e.preventDefault();
           onNavigate(articlePath);
         }}
-        className="block aspect-[4/3] w-full overflow-hidden bg-slate-100"
+        className="block h-44 sm:h-48 w-full overflow-hidden bg-slate-100 shrink-0"
       >
         <ImageWithFallback
           src={article.featuredImage}

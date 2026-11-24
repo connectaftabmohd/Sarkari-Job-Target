@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { SITE_CONFIG } from '../config/site';
 
 export interface BreadcrumbSchemaItem {
   name: string;
@@ -55,10 +56,7 @@ export function SeoHead({
   articleSchema,
 }: SeoHeadProps) {
   useEffect(() => {
-    const origin =
-      typeof window !== 'undefined' && window.location.origin
-        ? window.location.origin
-        : 'https://sarkarijobtarget.in';
+    const origin = SITE_CONFIG.getOrigin();
     const fullUrl = `${origin}${canonicalPath}`;
     const resolvedImage = ogImage
       ? ogImage.startsWith('http')
@@ -88,6 +86,11 @@ export function SeoHead({
         '@type': 'Organization',
         name: 'Sarkari Job Target',
         url: origin,
+        logo: `${origin}/assets/aistudio/Sarkari_Job_Target_02a57cf7.jfif`,
+        sameAs: [
+          'https://www.facebook.com/sarkarijobtarget.in/',
+          'https://www.instagram.com/sarkarijobtarget.in/',
+        ],
         description:
           'प्रतियोगी परीक्षाओं की तैयारी के लिए विश्वसनीय हिंदी शैक्षणिक ब्लॉग और स्टडी मटेरियल प्लेटफॉर्म।',
       },

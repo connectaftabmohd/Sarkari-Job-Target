@@ -50,39 +50,29 @@ export function Footer({ onNavigate }: FooterProps) {
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-4 text-xs font-medium text-slate-600">
               <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#C81E1E] transition-colors"
-              >
-                YouTube
-              </a>
-              <span aria-hidden="true">·</span>
-              <a
-                href="https://t.me"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#C81E1E] transition-colors"
-              >
-                Telegram
-              </a>
-              <span aria-hidden="true">·</span>
-              <a
-                href="https://x.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#C81E1E] transition-colors"
-              >
-                X (Twitter)
-              </a>
-              <span aria-hidden="true">·</span>
-              <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/sarkarijobtarget.in/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#C81E1E] transition-colors"
               >
                 Facebook
+              </a>
+              <span aria-hidden="true">·</span>
+              <a
+                href="https://www.instagram.com/sarkarijobtarget.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#C81E1E] transition-colors"
+              >
+                Instagram
+              </a>
+              <span aria-hidden="true">·</span>
+              <a
+                href="/contact"
+                onClick={(e) => handleLink(e, '/contact')}
+                className="hover:text-[#C81E1E] transition-colors"
+              >
+                संपर्क करें
               </a>
             </div>
           </div>

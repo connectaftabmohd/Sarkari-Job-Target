@@ -127,12 +127,32 @@ export function StaticInfoPage({ pageType, onNavigate }: StaticInfoPageProps) {
           <p>
             यदि आपको किसी लेख में तथ्यात्मक सुधार का सुझाव देना है, किसी विषय के नोट्स का अनुरोध करना है या कोई प्रश्न पूछना है, तो आप नीचे दिए गए संदेश फॉर्म या ईमेल के माध्यम से हमारे संपादकीय दल से संपर्क कर सकते हैं।
           </p>
-          <div className="p-4 rounded-lg border border-slate-200 bg-slate-50 text-sm text-slate-700">
+          <div className="p-4 rounded-lg border border-slate-200 bg-slate-50 text-sm text-slate-700 space-y-1.5">
             <p>
               <strong>संपादकीय ईमेल:</strong> contact@sarkarijobtarget.in
             </p>
-            <p className="mt-1">
+            <p>
               <strong>कार्य समय:</strong> सोमवार से शनिवार, प्रातः 10:00 बजे से सायं 6:00 बजे तक
+            </p>
+            <p>
+              <strong>आधिकारिक सोशल पेज:</strong>{' '}
+              <a
+                href="https://www.facebook.com/sarkarijobtarget.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#C81E1E] font-semibold hover:underline"
+              >
+                Facebook
+              </a>
+              {' · '}
+              <a
+                href="https://www.instagram.com/sarkarijobtarget.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#C81E1E] font-semibold hover:underline"
+              >
+                Instagram
+              </a>
             </p>
           </div>
 

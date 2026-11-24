@@ -1,14 +1,29 @@
-import { Component, ErrorInfo, ReactNode, useCallback, useEffect, useState } from 'react';
+import { Component, ErrorInfo, lazy, ReactNode, Suspense, useCallback, useEffect, useState } from 'react';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
-import { ArticlePage } from './pages/ArticlePage';
-import { CategoryPage } from './pages/CategoryPage';
-import { CmsArchitecturePage } from './pages/CmsArchitecturePage';
-import { ExamUpdatesPage } from './pages/ExamUpdatesPage';
 import { HomePage } from './pages/HomePage';
-import { SearchPage } from './pages/SearchPage';
-import { StaticInfoPage } from './pages/StaticInfoPage';
-import { StudyMaterialPage } from './pages/StudyMaterialPage';
+
+const ArticlePage = lazy(() =>
+  import('./pages/ArticlePage').then((m) => ({ default: m.ArticlePage }))
+);
+const CategoryPage = lazy(() =>
+  import('./pages/CategoryPage').then((m) => ({ default: m.CategoryPage }))
+);
+const CmsArchitecturePage = lazy(() =>
+  import('./pages/CmsArchitecturePage').then((m) => ({ default: m.CmsArchitecturePage }))
+);
+const ExamUpdatesPage = lazy(() =>
+  import('./pages/ExamUpdatesPage').then((m) => ({ default: m.ExamUpdatesPage }))
+);
+const SearchPage = lazy(() =>
+  import('./pages/SearchPage').then((m) => ({ default: m.SearchPage }))
+);
+const StaticInfoPage = lazy(() =>
+  import('./pages/StaticInfoPage').then((m) => ({ default: m.StaticInfoPage }))
+);
+const StudyMaterialPage = lazy(() =>
+  import('./pages/StudyMaterialPage').then((m) => ({ default: m.StudyMaterialPage }))
+);
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -55,6 +70,14 @@ class AppErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState>
     }
     return this.props.children;
   }
+}
+
+function PageLoader() {
+  return (
+    <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-16 text-center text-sm text-slate-500">
+      पृष्ठ लोड हो रहा है...
+    </div>
+  );
 }
 
 function getCurrentLocation(): { pathname: string; search: string } {
@@ -165,7 +188,9 @@ export default function App() {
     <div className="min-h-screen flex flex-col bg-white text-slate-900">
       <Header currentPath={location.pathname} onNavigate={navigate} />
       <main className="flex-1">
-        <AppErrorBoundary onReset={() => navigate('/')}>{renderPage()}</AppErrorBoundary>
+        <AppErrorBoundary onReset={() => navigate('/')}>
+          <Suspense fallback={<PageLoader />}>{renderPage()}</Suspense>
+        </AppErrorBoundary>
       </main>
       <Footer onNavigate={navigate} />
     </div>

@@ -63,7 +63,7 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
         {/* Desktop Navigation */}
         <nav
           aria-label="मुख्य नेविगेशन"
-          className="hidden lg:flex items-center gap-5 xl:gap-7 text-[15px] xl:text-base font-semibold text-slate-700 overflow-x-auto"
+          className="hidden xl:flex items-center gap-6 text-[15px] font-semibold text-slate-700"
         >
           {NAV_ITEMS.map((item) => {
             const isActive =
@@ -104,7 +104,7 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             aria-label={mobileMenuOpen ? 'मेनू बंद करें' : 'मेनू खोलें'}
             aria-expanded={mobileMenuOpen}
-            className="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg text-slate-700 hover:bg-red-50 hover:text-[#C81E1E] transition-colors focus-visible:outline-2 focus-visible:outline-[#C81E1E]"
+            className="xl:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg text-slate-700 hover:bg-red-50 hover:text-[#C81E1E] transition-colors focus-visible:outline-2 focus-visible:outline-[#C81E1E]"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -141,11 +141,11 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
         </div>
       )}
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile & Tablet Navigation Drawer */}
       {mobileMenuOpen && (
         <nav
           aria-label="मोबाइल नेविगेशन"
-          className="lg:hidden border-t border-slate-200 bg-white px-4 py-3"
+          className="xl:hidden border-t border-slate-200 bg-white px-4 sm:px-8 py-3"
         >
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1">
             {NAV_ITEMS.map((item) => {

@@ -2,10 +2,19 @@ import { FormEvent, useState } from 'react';
 import {
   ArrowRight,
   BookOpen,
+  BrainCircuit,
+  Calculator,
   CheckCircle2,
   ClipboardCheck,
   FileText,
+  Globe,
+  Landmark,
+  Languages,
   Layers,
+  LucideIcon,
+  Map,
+  Newspaper,
+  Scale,
   Search,
 } from 'lucide-react';
 import { ArticleCard } from '../components/ArticleCard';
@@ -22,6 +31,17 @@ import { CurrentAffairsPeriod } from '../types/blog';
 interface HomePageProps {
   onNavigate: (path: string) => void;
 }
+
+const CATEGORY_ICONS: Record<string, LucideIcon> = {
+  'general-knowledge': Globe,
+  'current-affairs': Newspaper,
+  'general-hindi': Languages,
+  mathematics: Calculator,
+  reasoning: BrainCircuit,
+  'indian-constitution': Scale,
+  'indian-history': Landmark,
+  'indian-geography': Map,
+};
 
 const TARGET_EXAMS = [
   'UPSSSC PET',
@@ -197,6 +217,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-5">
           {POPULAR_CATEGORIES.map((cat) => {
             const count = getArticlesByCategory(cat.slug).length;
+            const TopicIcon = CATEGORY_ICONS[cat.slug] || BookOpen;
             return (
               <a
                 key={cat.id}
@@ -208,6 +229,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 className="group p-4 sm:p-5 bg-white border border-slate-200 rounded-lg hover:border-[#C81E1E] transition-colors flex flex-col justify-between"
               >
                 <div>
+                  <div className="w-10 h-10 rounded-lg bg-[#C81E1E]/10 text-[#C81E1E] flex items-center justify-center mb-3.5 group-hover:bg-[#C81E1E] group-hover:text-white transition-colors">
+                    <TopicIcon className="w-5 h-5" aria-hidden="true" />
+                  </div>
                   <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#C81E1E] transition-colors">
                     {cat.nameHi}
                   </h3>

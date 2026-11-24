@@ -140,7 +140,7 @@ export function CategoryPage({ slug, onNavigate }: CategoryPageProps) {
           {/* Pagination */}
           <nav
             aria-label="पृष्ठ नेविगेशन"
-            className="mt-10 pt-6 border-t border-slate-200 flex items-center justify-between"
+            className="mt-10 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4"
           >
             <div className="text-xs sm:text-sm text-slate-600 tabular-nums">
               पृष्ठ {safePage} / {totalPages} (कुल {categoryArticles.length} लेख)

@@ -1,4 +1,5 @@
 import { Article, CurrentAffairsPeriod } from '../types/blog';
+import { getCategoryBySlug } from './categories';
 
 const IMG_CURRENT_AFFAIRS = '/src/assets/images/article_current_affairs_1795516955434.jpg';
 const IMG_POLITY = '/src/assets/images/article_constitution_polity_1795516955841.jpg';
@@ -1259,18 +1260,56 @@ export function getRelatedArticles(article: Article, limit = 3): Article[] {
 }
 
 export function searchArticles(query: string): Article[] {
-  const q = query.trim().toLowerCase();
-  if (!q) return getPublishedArticles();
-  return getPublishedArticles().filter((a) => {
-    const inTitle = a.title.toLowerCase().includes(q);
-    const inExcerpt = a.excerpt.toLowerCase().includes(q);
-    const inTags = a.examTags.some((t) => t.toLowerCase().includes(q));
-    const inSlug = a.slug.toLowerCase().includes(q);
-    const inSections = a.sections.some(
-      (s) =>
-        s.heading.toLowerCase().includes(q) ||
-        s.paragraphs.some((p) => p.toLowerCase().includes(q))
-    );
-    return inTitle || inExcerpt || inTags || inSlug || inSections;
-  });
+  const normalized = query.trim().toLowerCase();
+  if (!normalized) return getPublishedArticles();
+
+  const tokens = normalized.split(/\s+/).filter(Boolean);
+
+  const scored = getPublishedArticles()
+    .map((a) => {
+      const cat = getCategoryBySlug(a.categorySlug);
+      const titleText = a.title.toLowerCase();
+      const catText = cat ? `${cat.nameHi} ${cat.nameEn}`.toLowerCase() : '';
+      const tagText = a.examTags.join(' ').toLowerCase();
+      const excerptText = a.excerpt.toLowerCase();
+      const sectionText = a.sections
+        .map((s) =>
+          [
+            s.heading,
+            ...s.paragraphs,
+            ...(s.bulletPoints || []),
+            s.infoBox ? `${s.infoBox.title} ${s.infoBox.content}` : '',
+            s.table
+              ? `${s.table.caption || ''} ${s.table.headers.join(' ')} ${s.table.rows
+                  .map((r) => r.join(' '))
+                  .join(' ')}`
+              : '',
+          ].join(' ')
+        )
+        .join(' ')
+        .toLowerCase();
+      const mcqText = a.mcqs
+        .map((m) => `${m.question} ${m.options.join(' ')} ${m.explanation}`)
+        .join(' ')
+        .toLowerCase();
+
+      const fullCorpus = `${titleText} ${catText} ${tagText} ${excerptText} ${a.slug.toLowerCase()} ${sectionText} ${mcqText}`;
+
+      const allMatch = tokens.every((t) => fullCorpus.includes(t));
+      if (!allMatch) return null;
+
+      let score = 0;
+      for (const t of tokens) {
+        if (titleText.includes(t)) score += 10;
+        if (catText.includes(t)) score += 6;
+        if (tagText.includes(t)) score += 5;
+        if (excerptText.includes(t)) score += 3;
+        if (sectionText.includes(t)) score += 2;
+        if (mcqText.includes(t)) score += 1;
+      }
+      return { article: a, score };
+    })
+    .filter((entry): entry is { article: Article; score: number } => entry !== null);
+
+  return scored.sort((a, b) => b.score - a.score).map((entry) => entry.article);
 }
