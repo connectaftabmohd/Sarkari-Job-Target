@@ -35,7 +35,7 @@ export function SearchPage({ initialQuery, onNavigate }: SearchPageProps) {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+    <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-8 sm:py-12">
       <SeoHead
         title={
           initialQuery

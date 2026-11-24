@@ -43,19 +43,19 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-slate-200">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4 lg:gap-8">
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 h-20 lg:h-24 flex items-center justify-between gap-4 lg:gap-8">
         {/* Brand Zone */}
         <a
           href="/"
           onClick={(e) => handleLinkClick(e, '/')}
-          className="flex items-center gap-2.5 whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C81E1E] rounded"
+          className="flex items-center gap-3 whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C81E1E] rounded"
         >
           <img
             src="/assets/aistudio/Sarkari_Job_Target_02a57cf7.jfif"
             alt="Sarkari Job Target Logo"
-            className="w-10 h-10 object-contain rounded bg-white shrink-0"
+            className="w-12 h-12 lg:w-16 lg:h-16 object-contain rounded bg-white shrink-0"
           />
-          <span className="text-lg font-bold tracking-tight text-slate-900">
+          <span className="text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-slate-900">
             Sarkari Job <span className="text-[#C81E1E]">Target</span>
           </span>
         </a>
@@ -63,7 +63,7 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
         {/* Desktop Navigation */}
         <nav
           aria-label="मुख्य नेविगेशन"
-          className="hidden lg:flex items-center gap-5 text-sm font-medium text-slate-700 overflow-x-auto"
+          className="hidden lg:flex items-center gap-5 xl:gap-7 text-[15px] xl:text-base font-semibold text-slate-700 overflow-x-auto"
         >
           {NAV_ITEMS.map((item) => {
             const isActive =
@@ -75,9 +75,9 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
                 key={item.path}
                 href={item.path}
                 onClick={(e) => handleLinkClick(e, item.path)}
-                className={`whitespace-nowrap shrink-0 py-1 border-b-2 transition-colors duration-150 ${
+                className={`whitespace-nowrap shrink-0 py-1.5 border-b-2 transition-colors duration-150 ${
                   isActive
-                    ? 'text-[#C81E1E] border-[#C81E1E] font-semibold'
+                    ? 'text-[#C81E1E] border-[#C81E1E]'
                     : 'border-transparent hover:text-[#C81E1E] hover:border-slate-300'
                 }`}
               >
@@ -88,13 +88,13 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
         </nav>
 
         {/* Actions: Search & Mobile Menu */}
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-2.5 shrink-0">
           <button
             type="button"
             onClick={() => setSearchOpen((prev) => !prev)}
             aria-label={searchOpen ? 'खोज बंद करें' : 'टॉपिक या परीक्षा खोजें'}
             aria-expanded={searchOpen}
-            className="inline-flex items-center justify-center w-10 h-10 rounded-lg text-slate-700 hover:bg-red-50 hover:text-[#C81E1E] transition-colors focus-visible:outline-2 focus-visible:outline-[#C81E1E]"
+            className="inline-flex items-center justify-center w-11 h-11 rounded-lg text-slate-700 hover:bg-red-50 hover:text-[#C81E1E] transition-colors focus-visible:outline-2 focus-visible:outline-[#C81E1E]"
           >
             {searchOpen ? <X className="w-5 h-5" /> : <Search className="w-5 h-5" />}
           </button>
@@ -104,19 +104,19 @@ export function Header({ currentPath, onNavigate }: HeaderProps) {
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             aria-label={mobileMenuOpen ? 'मेनू बंद करें' : 'मेनू खोलें'}
             aria-expanded={mobileMenuOpen}
-            className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-slate-700 hover:bg-red-50 hover:text-[#C81E1E] transition-colors focus-visible:outline-2 focus-visible:outline-[#C81E1E]"
+            className="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg text-slate-700 hover:bg-red-50 hover:text-[#C81E1E] transition-colors focus-visible:outline-2 focus-visible:outline-[#C81E1E]"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
       {/* Expandable Search Bar */}
       {searchOpen && (
-        <div className="border-t border-slate-200 bg-slate-50 px-4 sm:px-6 py-3">
+        <div className="border-t border-slate-200 bg-slate-50 px-4 sm:px-8 lg:px-12 xl:px-16 py-4">
           <form
             onSubmit={handleSearchSubmit}
-            className="max-w-3xl mx-auto flex items-center gap-2"
+            className="max-w-4xl mx-auto flex items-center gap-2.5"
             role="search"
           >
             <label htmlFor="header-search-input" className="sr-only">

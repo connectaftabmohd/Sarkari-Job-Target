@@ -106,18 +106,18 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       {/* 1. Hero Section */}
       <section className="border-b border-slate-200 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16 text-center">
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 text-center">
           <div className="flex justify-center mb-4">
             <img
               src="/assets/aistudio/Sarkari_Job_Target_02a57cf7.jfif"
               alt="Sarkari Job Target"
-              className="w-20 h-20 object-contain rounded-lg bg-white"
+              className="w-24 h-24 object-contain rounded-lg bg-white"
             />
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-slate-900 leading-tight tracking-tight max-w-3xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-slate-900 leading-tight tracking-tight max-w-4xl mx-auto">
             प्रतियोगी परीक्षाओं की तैयारी अब आसान!
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
             UPSSSC PET, UP Police, SSC, Railway, UPPSC, UPSC, CTET, Lekhpal और बैंकिंग परीक्षाओं के लिए सरल हिंदी में प्रमाणित नोट्स, दैनिक करेंट अफेयर्स और अभ्यास प्रश्न।
           </p>
 
@@ -125,7 +125,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <form
             onSubmit={handleHeroSearch}
             role="search"
-            className="mt-8 max-w-2xl mx-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5"
+            className="mt-8 max-w-3xl mx-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5"
           >
             <div className="relative flex-1">
               <Search
@@ -146,14 +146,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </div>
             <button
               type="submit"
-              className="h-12 px-6 rounded-lg bg-[#C81E1E] text-white text-sm sm:text-base font-semibold hover:bg-[#991B1B] transition-colors whitespace-nowrap shrink-0"
+              className="h-12 px-7 rounded-lg bg-[#C81E1E] text-white text-sm sm:text-base font-semibold hover:bg-[#991B1B] transition-colors whitespace-nowrap shrink-0"
             >
               खोजें
             </button>
           </form>
 
           {/* Target Exams Clean Links */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs sm:text-sm text-slate-600">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs sm:text-sm text-slate-600">
             <span className="font-semibold text-slate-900">लक्ष्य परीक्षाएँ:</span>
             {TARGET_EXAMS.map((exam) => (
               <a
@@ -173,7 +173,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* 2. Popular Categories */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 border-b border-slate-200">
+      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-12 border-b border-slate-200">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-7">
           <div>
             <h2 className="text-2xl font-bold text-slate-900">प्रमुख श्रेणियाँ (Popular Categories)</h2>
@@ -194,7 +194,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </a>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-5">
           {POPULAR_CATEGORIES.map((cat) => {
             const count = getArticlesByCategory(cat.slug).length;
             return (
@@ -227,7 +227,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* 3. Latest Articles (2-column desktop, 1-column mobile) */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 border-b border-slate-200">
+      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-12 border-b border-slate-200">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-7">
           <div>
             <h2 className="text-2xl font-bold text-slate-900">नवीनतम लेख (Latest Articles)</h2>
@@ -248,7 +248,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {latestArticles.map((article) => (
             <ArticleCard key={article.id} article={article} onNavigate={onNavigate} />
           ))}
@@ -256,7 +256,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* 4. Important Study Materials */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 border-b border-slate-200">
+      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-12 border-b border-slate-200">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-7">
           <div>
             <h2 className="text-2xl font-bold text-slate-900">
@@ -279,7 +279,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {STUDY_MATERIAL_CARDS.map((card) => {
             const Icon = card.icon;
             return (
@@ -311,8 +311,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* 5. Current Affairs Section + 6. Popular Posts */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 border-b border-slate-200">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-12 border-b border-slate-200">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
           {/* Current Affairs Section */}
           <div className="lg:col-span-7">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
@@ -452,7 +452,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* 7. Newsletter Subscription */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-12">
+      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 pt-12">
         <div className="border border-slate-200 rounded-lg bg-slate-50 p-6 sm:p-10 text-center">
           <h2 className="text-2xl font-bold text-slate-900">
             दैनिक परीक्षा अपडेट और फ्री नोट्स ईमेल पर पाएं

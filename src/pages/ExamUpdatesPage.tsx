@@ -8,7 +8,7 @@ interface ExamUpdatesPageProps {
 
 export function ExamUpdatesPage({ onNavigate }: ExamUpdatesPageProps) {
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+    <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-8 sm:py-12">
       <SeoHead
         title="परीक्षा अपडेट एवं भर्ती मार्गदर्शन (Exam Updates) – Sarkari Job Target"
         description="UPSSSC PET, SSC GD, CHSL, Railway NTPC, Group D और UP Police परीक्षा पैटर्न, पाठ्यक्रम अपडेट व तैयारी कैलेंडर हिंदी में पढ़ें।"

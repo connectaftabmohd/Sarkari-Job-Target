@@ -27,7 +27,7 @@ export function Footer({ onNavigate }: FooterProps) {
 
   return (
     <footer className="border-t border-slate-200 bg-slate-50 text-slate-700 mt-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Brand Summary */}
           <div className="md:col-span-5">
