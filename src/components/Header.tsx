@@ -1,0 +1,190 @@
+import { FormEvent, useState } from 'react';
+import { Menu, Search, X } from 'lucide-react';
+
+interface HeaderProps {
+  currentPath: string;
+  onNavigate: (path: string) => void;
+}
+
+const NAV_ITEMS = [
+  { label: 'होम', path: '/' },
+  { label: 'करेंट अफेयर्स', path: '/category/current-affairs' },
+  { label: 'सामान्य ज्ञान', path: '/category/general-knowledge' },
+  { label: 'हिंदी', path: '/category/general-hindi' },
+  { label: 'गणित', path: '/category/mathematics' },
+  { label: 'रीजनिंग', path: '/category/reasoning' },
+  { label: 'स्टडी मटेरियल', path: '/study-material' },
+  { label: 'परीक्षा अपडेट', path: '/exam-updates' },
+];
+
+export function Header({ currentPath, onNavigate }: HeaderProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleLinkClick = (e: React.MouseEvent, path: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    setSearchOpen(false);
+    onNavigate(path);
+  };
+
+  const handleSearchSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const trimmed = searchTerm.trim();
+    setSearchOpen(false);
+    setMobileMenuOpen(false);
+    if (trimmed) {
+      onNavigate(`/search?q=${encodeURIComponent(trimmed)}`);
+    } else {
+      onNavigate('/search');
+    }
+  };
+
+  return (
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4 lg:gap-8">
+        {/* Brand Zone */}
+        <a
+          href="/"
+          onClick={(e) => handleLinkClick(e, '/')}
+          className="flex items-center gap-2.5 whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#174EA6] rounded"
+        >
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 28 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            className="shrink-0"
+          >
+            <rect width="28" height="28" rx="6" fill="#174EA6" />
+            <path
+              d="M8 9.5H20M8 14H16.5M8 18.5H13.5"
+              stroke="#FFFFFF"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+            />
+            <circle cx="19.5" cy="18.5" r="2.5" fill="#FF9800" />
+          </svg>
+          <span className="text-lg font-bold tracking-tight text-slate-900">
+            Sarkari Job Target
+          </span>
+        </a>
+
+        {/* Desktop Navigation */}
+        <nav
+          aria-label="मुख्य नेविगेशन"
+          className="hidden lg:flex items-center gap-5 text-sm font-medium text-slate-700 overflow-x-auto"
+        >
+          {NAV_ITEMS.map((item) => {
+            const isActive =
+              item.path === '/'
+                ? currentPath === '/'
+                : currentPath.startsWith(item.path);
+            return (
+              <a
+                key={item.path}
+                href={item.path}
+                onClick={(e) => handleLinkClick(e, item.path)}
+                className={`whitespace-nowrap shrink-0 py-1 border-b-2 transition-colors duration-150 ${
+                  isActive
+                    ? 'text-[#174EA6] border-[#174EA6] font-semibold'
+                    : 'border-transparent hover:text-[#174EA6] hover:border-slate-300'
+                }`}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+        </nav>
+
+        {/* Actions: Search & Mobile Menu */}
+        <div className="flex items-center gap-2 shrink-0">
+          <button
+            type="button"
+            onClick={() => setSearchOpen((prev) => !prev)}
+            aria-label={searchOpen ? 'खोज बंद करें' : 'टॉपिक या परीक्षा खोजें'}
+            aria-expanded={searchOpen}
+            className="inline-flex items-center justify-center w-10 h-10 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-[#174EA6] transition-colors focus-visible:outline-2 focus-visible:outline-[#174EA6]"
+          >
+            {searchOpen ? <X className="w-5 h-5" /> : <Search className="w-5 h-5" />}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+            aria-label={mobileMenuOpen ? 'मेनू बंद करें' : 'मेनू खोलें'}
+            aria-expanded={mobileMenuOpen}
+            className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-[#174EA6] transition-colors focus-visible:outline-2 focus-visible:outline-[#174EA6]"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Expandable Search Bar */}
+      {searchOpen && (
+        <div className="border-t border-slate-200 bg-slate-50 px-4 sm:px-6 py-3">
+          <form
+            onSubmit={handleSearchSubmit}
+            className="max-w-3xl mx-auto flex items-center gap-2"
+            role="search"
+          >
+            <label htmlFor="header-search-input" className="sr-only">
+              यहां टॉपिक या परीक्षा खोजें
+            </label>
+            <input
+              id="header-search-input"
+              type="search"
+              autoFocus
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="यहां टॉपिक या परीक्षा खोजें (जैसे UPSSSC PET, संधि, मौलिक अधिकार)"
+              className="flex-1 h-11 px-4 rounded-lg border border-slate-300 bg-white text-sm text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-[#174EA6]"
+            />
+            <button
+              type="submit"
+              className="h-11 px-5 rounded-lg bg-[#174EA6] text-white text-sm font-semibold hover:bg-[#123D85] transition-colors whitespace-nowrap shrink-0"
+            >
+              खोजें
+            </button>
+          </form>
+        </div>
+      )}
+
+      {/* Mobile Navigation Drawer */}
+      {mobileMenuOpen && (
+        <nav
+          aria-label="मोबाइल नेविगेशन"
+          className="lg:hidden border-t border-slate-200 bg-white px-4 py-3"
+        >
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1">
+            {NAV_ITEMS.map((item) => {
+              const isActive =
+                item.path === '/'
+                  ? currentPath === '/'
+                  : currentPath.startsWith(item.path);
+              return (
+                <li key={item.path}>
+                  <a
+                    href={item.path}
+                    onClick={(e) => handleLinkClick(e, item.path)}
+                    className={`block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                      isActive
+                        ? 'bg-[#174EA6]/10 text-[#174EA6] font-semibold'
+                        : 'text-slate-700 hover:bg-slate-100'
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      )}
+    </header>
+  );
+}

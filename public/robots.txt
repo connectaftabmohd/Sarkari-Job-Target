@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /editorial-cms-architecture
+
+Sitemap: https://sarkarijobtarget.in/sitemap.xml

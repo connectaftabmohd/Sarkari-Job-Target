@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-hindi: 'Noto Sans Devanagari', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --color-primary: #174EA6;
+    --color-accent: #FF9800;
+  }
+
+  html {
+    font-family: var(--font-hindi);
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+    color: #0f172a;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  table {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
