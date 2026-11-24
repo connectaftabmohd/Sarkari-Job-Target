@@ -107,6 +107,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* 1. Hero Section */}
       <section className="border-b border-slate-200 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16 text-center">
+          <div className="flex justify-center mb-4">
+            <img
+              src="/assets/aistudio/Sarkari_Job_Target_02a57cf7.jfif"
+              alt="Sarkari Job Target"
+              className="w-20 h-20 object-contain rounded-lg bg-white"
+            />
+          </div>
           <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-slate-900 leading-tight tracking-tight max-w-3xl mx-auto">
             प्रतियोगी परीक्षाओं की तैयारी अब आसान!
           </h1>
@@ -134,12 +141,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 value={heroSearch}
                 onChange={(e) => setHeroSearch(e.target.value)}
                 placeholder="यहां टॉपिक या परीक्षा खोजें"
-                className="w-full h-12 pl-11 pr-4 rounded-lg border border-slate-300 bg-white text-sm sm:text-base text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-[#174EA6]"
+                className="w-full h-12 pl-11 pr-4 rounded-lg border border-slate-300 bg-white text-sm sm:text-base text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-[#C81E1E]"
               />
             </div>
             <button
               type="submit"
-              className="h-12 px-6 rounded-lg bg-[#174EA6] text-white text-sm sm:text-base font-semibold hover:bg-[#123D85] transition-colors whitespace-nowrap shrink-0"
+              className="h-12 px-6 rounded-lg bg-[#C81E1E] text-white text-sm sm:text-base font-semibold hover:bg-[#991B1B] transition-colors whitespace-nowrap shrink-0"
             >
               खोजें
             </button>
@@ -147,7 +154,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
           {/* Target Exams Clean Links */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs sm:text-sm text-slate-600">
-            <span className="font-semibold text-slate-800">लक्ष्य परीक्षाएँ:</span>
+            <span className="font-semibold text-slate-900">लक्ष्य परीक्षाएँ:</span>
             {TARGET_EXAMS.map((exam) => (
               <a
                 key={exam}
@@ -156,7 +163,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   e.preventDefault();
                   onNavigate(`/search?q=${encodeURIComponent(exam.split(' ')[0])}`);
                 }}
-                className="hover:text-[#174EA6] hover:underline transition-colors"
+                className="hover:text-[#C81E1E] hover:underline transition-colors"
               >
                 {exam}
               </a>
@@ -180,7 +187,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               e.preventDefault();
               onNavigate('/category/general-knowledge');
             }}
-            className="text-sm font-semibold text-[#174EA6] hover:underline inline-flex items-center gap-1 whitespace-nowrap shrink-0"
+            className="text-sm font-semibold text-[#C81E1E] hover:underline inline-flex items-center gap-1 whitespace-nowrap shrink-0"
           >
             <span>सभी {CATEGORIES.length} श्रेणियाँ देखें</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -198,10 +205,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   e.preventDefault();
                   onNavigate(`/category/${cat.slug}`);
                 }}
-                className="group p-4 sm:p-5 bg-white border border-slate-200 rounded-lg hover:border-[#174EA6] transition-colors flex flex-col justify-between"
+                className="group p-4 sm:p-5 bg-white border border-slate-200 rounded-lg hover:border-[#C81E1E] transition-colors flex flex-col justify-between"
               >
                 <div>
-                  <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#174EA6] transition-colors">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#C81E1E] transition-colors">
                     {cat.nameHi}
                   </h3>
                   <p className="text-xs text-slate-500 mt-1">{cat.nameEn}</p>
@@ -209,7 +216,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
                   <span className="tabular-nums">{count} लेख उपलब्ध</span>
                   <ArrowRight
-                    className="w-4 h-4 text-slate-400 group-hover:text-[#174EA6] transition-colors"
+                    className="w-4 h-4 text-slate-400 group-hover:text-[#C81E1E] transition-colors"
                     aria-hidden="true"
                   />
                 </div>
@@ -234,7 +241,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               e.preventDefault();
               onNavigate('/search');
             }}
-            className="text-sm font-semibold text-[#174EA6] hover:underline inline-flex items-center gap-1 whitespace-nowrap shrink-0"
+            className="text-sm font-semibold text-[#C81E1E] hover:underline inline-flex items-center gap-1 whitespace-nowrap shrink-0"
           >
             <span>सभी लेख देखें</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -265,7 +272,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               e.preventDefault();
               onNavigate('/study-material');
             }}
-            className="text-sm font-semibold text-[#174EA6] hover:underline inline-flex items-center gap-1 whitespace-nowrap shrink-0"
+            className="text-sm font-semibold text-[#C81E1E] hover:underline inline-flex items-center gap-1 whitespace-nowrap shrink-0"
           >
             <span>स्टडी मटेरियल केंद्र खोलें</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -283,17 +290,17 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   e.preventDefault();
                   onNavigate(`/study-material?type=${card.type}`);
                 }}
-                className="group p-5 bg-slate-50 border border-slate-200 rounded-lg hover:bg-white hover:border-[#174EA6] transition-colors flex flex-col"
+                className="group p-5 bg-slate-50 border border-slate-200 rounded-lg hover:bg-white hover:border-[#C81E1E] transition-colors flex flex-col"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#174EA6]/10 text-[#174EA6] flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-lg bg-[#C81E1E]/10 text-[#C81E1E] flex items-center justify-center mb-4">
                   <Icon className="w-5 h-5" aria-hidden="true" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#174EA6]">
+                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#C81E1E]">
                   {card.title}
                 </h3>
-                <p className="text-xs font-semibold text-[#B45309] mt-0.5">{card.subtitle}</p>
+                <p className="text-xs font-semibold text-slate-700 mt-0.5">{card.subtitle}</p>
                 <p className="text-sm text-slate-600 leading-relaxed mt-2 flex-1">{card.desc}</p>
-                <span className="mt-4 text-xs font-semibold text-[#174EA6] inline-flex items-center gap-1">
+                <span className="mt-4 text-xs font-semibold text-[#C81E1E] inline-flex items-center gap-1">
                   <span>अभी देखें</span>
                   <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                 </span>
@@ -337,7 +344,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     onClick={() => setCaPeriod(tab.id)}
                     className={`px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap shrink-0 ${
                       caPeriod === tab.id
-                        ? 'bg-white text-[#174EA6] shadow-xs font-semibold'
+                        ? 'bg-white text-[#C81E1E] shadow-xs font-semibold'
                         : 'text-slate-600 hover:text-slate-900'
                     }`}
                   >
@@ -351,7 +358,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               {currentAffairsList.map((post) => (
                 <article key={post.id} className="p-5 hover:bg-slate-50/70 transition-colors">
                   <div className="flex items-center gap-2 text-xs text-slate-500 mb-1.5">
-                    <span className="font-semibold text-[#B45309]">
+                    <span className="font-semibold text-[#C81E1E]">
                       {caPeriod === 'daily'
                         ? 'Daily Current Affairs'
                         : caPeriod === 'weekly'
@@ -372,7 +379,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                         e.preventDefault();
                         onNavigate(`/article/${post.slug}`);
                       }}
-                      className="hover:text-[#174EA6] transition-colors"
+                      className="hover:text-[#C81E1E] transition-colors"
                     >
                       {post.title}
                     </a>
@@ -391,7 +398,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   e.preventDefault();
                   onNavigate('/category/current-affairs');
                 }}
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#174EA6] hover:underline"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C81E1E] hover:underline"
               >
                 <span>सभी करेंट अफेयर्स लेख पढ़ें</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -412,7 +419,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               {popularArticles.map((post, index) => (
                 <li key={post.id} className="p-4 hover:bg-slate-50/70 transition-colors">
                   <div className="flex items-start gap-3.5">
-                    <span className="text-lg font-bold text-[#174EA6] tabular-nums leading-none mt-0.5 shrink-0">
+                    <span className="text-lg font-bold text-[#C81E1E] tabular-nums leading-none mt-0.5 shrink-0">
                       0{index + 1}.
                     </span>
                     <div className="min-w-0">
@@ -423,7 +430,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                             e.preventDefault();
                             onNavigate(`/article/${post.slug}`);
                           }}
-                          className="hover:text-[#174EA6] transition-colors"
+                          className="hover:text-[#C81E1E] transition-colors"
                         >
                           {post.title}
                         </a>
@@ -477,12 +484,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   if (newsletterStatus === 'error') setNewsletterStatus('idle');
                 }}
                 placeholder="अपना ईमेल पता लिखें (उदा. student@example.com)"
-                className="flex-1 h-11 px-4 rounded-lg border border-slate-300 bg-white text-sm text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-[#174EA6]"
+                className="flex-1 h-11 px-4 rounded-lg border border-slate-300 bg-white text-sm text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-[#C81E1E]"
                 required
               />
               <button
                 type="submit"
-                className="h-11 px-6 rounded-lg bg-[#FF9800] text-slate-950 text-sm font-bold hover:bg-[#e68900] transition-colors whitespace-nowrap shrink-0"
+                className="h-11 px-6 rounded-lg bg-[#111827] text-white text-sm font-semibold hover:bg-[#C81E1E] transition-colors whitespace-nowrap shrink-0"
               >
                 सदस्यता लें
               </button>

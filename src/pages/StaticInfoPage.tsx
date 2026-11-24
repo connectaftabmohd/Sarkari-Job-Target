@@ -88,7 +88,7 @@ export function StaticInfoPage({ pageType, onNavigate }: StaticInfoPageProps) {
                 e.preventDefault();
                 onNavigate('/');
               }}
-              className="hover:text-[#174EA6] hover:underline"
+              className="hover:text-[#C81E1E] hover:underline"
             >
               होम
             </a>
@@ -153,7 +153,7 @@ export function StaticInfoPage({ pageType, onNavigate }: StaticInfoPageProps) {
                   required
                   value={contactName}
                   onChange={(e) => setContactName(e.target.value)}
-                  className="w-full h-11 px-3.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#174EA6]"
+                  className="w-full h-11 px-3.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#C81E1E]"
                 />
               </div>
               <div>
@@ -166,7 +166,7 @@ export function StaticInfoPage({ pageType, onNavigate }: StaticInfoPageProps) {
                   required
                   value={contactEmail}
                   onChange={(e) => setContactEmail(e.target.value)}
-                  className="w-full h-11 px-3.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#174EA6]"
+                  className="w-full h-11 px-3.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#C81E1E]"
                 />
               </div>
               <div>
@@ -179,12 +179,12 @@ export function StaticInfoPage({ pageType, onNavigate }: StaticInfoPageProps) {
                   required
                   value={contactMessage}
                   onChange={(e) => setContactMessage(e.target.value)}
-                  className="w-full p-3.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#174EA6]"
+                  className="w-full p-3.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#C81E1E]"
                 />
               </div>
               <button
                 type="submit"
-                className="px-5 py-2.5 rounded-lg bg-[#174EA6] text-white text-sm font-semibold hover:bg-[#123D85] transition-colors"
+                className="px-5 py-2.5 rounded-lg bg-[#C81E1E] text-white text-sm font-semibold hover:bg-[#991B1B] transition-colors"
               >
                 संदेश भेजें
               </button>

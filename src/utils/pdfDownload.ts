@@ -17,7 +17,7 @@ export function downloadArticleStudyNotes(article: Article): void {
     .map(
       (sec) => `
       <section style="margin-bottom:24px;">
-        <h2 style="color:#174EA6;font-size:18px;margin-bottom:8px;">${sec.heading}</h2>
+        <h2 style="color:#C81E1E;font-size:18px;margin-bottom:8px;">${sec.heading}</h2>
         ${sec.paragraphs.map((p) => `<p style="line-height:1.8;margin:8px 0;">${p}</p>`).join('')}
         ${
           sec.bulletPoints
@@ -60,7 +60,7 @@ export function downloadArticleStudyNotes(article: Article): void {
   const mcqsHtml =
     article.mcqs.length > 0
       ? `<section style="margin-top:28px;border-top:1px solid #E2E8F0;padding-top:16px;">
-          <h2 style="color:#174EA6;font-size:18px;">अभ्यास प्रश्न (MCQs)</h2>
+          <h2 style="color:#C81E1E;font-size:18px;">अभ्यास प्रश्न (MCQs)</h2>
           ${article.mcqs
             .map(
               (m, idx) => `
@@ -81,8 +81,8 @@ export function downloadArticleStudyNotes(article: Article): void {
   <title>${article.title} – Sarkari Job Target Notes</title>
 </head>
 <body style="font-family:'Noto Sans Devanagari',sans-serif;max-width:750px;margin:32px auto;padding:0 20px;color:#0F172A;">
-  <header style="border-bottom:2px solid #174EA6;padding-bottom:12px;margin-bottom:24px;">
-    <div style="font-size:13px;color:#174EA6;font-weight:700;">Sarkari Job Target — अध्ययन नोट्स</div>
+  <header style="border-bottom:2px solid #C81E1E;padding-bottom:12px;margin-bottom:24px;">
+    <div style="font-size:13px;color:#C81E1E;font-weight:700;">Sarkari Job Target — अध्ययन नोट्स</div>
     <h1 style="font-size:24px;margin:8px 0;">${article.title}</h1>
     <div style="font-size:13px;color:#475569;">लेखक: ${article.author.name} · अद्यतन: ${article.updatedAtDisplay}</div>
   </header>
@@ -105,13 +105,13 @@ export function downloadStudyMaterialSheet(item: StudyMaterialItem): void {
   <title>${item.title} – Sarkari Job Target</title>
 </head>
 <body style="font-family:'Noto Sans Devanagari',sans-serif;max-width:750px;margin:32px auto;padding:0 20px;color:#0F172A;">
-  <header style="border-bottom:2px solid #174EA6;padding-bottom:12px;margin-bottom:20px;">
-    <div style="font-size:13px;color:#174EA6;font-weight:700;">Sarkari Job Target — ${item.typeLabelHi}</div>
+  <header style="border-bottom:2px solid #C81E1E;padding-bottom:12px;margin-bottom:20px;">
+    <div style="font-size:13px;color:#C81E1E;font-weight:700;">Sarkari Job Target — ${item.typeLabelHi}</div>
     <h1 style="font-size:22px;margin:8px 0;">${item.title}</h1>
     <div style="font-size:13px;color:#475569;">परीक्षा: ${item.examName} · विषय: ${item.subjectHi} · ${item.updatedDisplay}</div>
   </header>
   <p style="line-height:1.8;">${item.description}</p>
-  <h2 style="color:#174EA6;font-size:17px;margin-top:20px;">मुख्य अध्ययन बिंदु</h2>
+  <h2 style="color:#C81E1E;font-size:17px;margin-top:20px;">मुख्य अध्ययन बिंदु</h2>
   <ul style="line-height:1.8;padding-left:20px;">
     ${item.summaryContent.map((point) => `<li style="margin-bottom:6px;">${point}</li>`).join('')}
   </ul>

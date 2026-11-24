@@ -39,7 +39,7 @@ export function McqBlock({ questions }: McqBlockProps) {
               className="border border-slate-200 rounded-lg p-5 bg-slate-50/60"
             >
               <p className="text-base font-semibold text-slate-900 mb-4 leading-relaxed">
-                <span className="tabular-nums text-[#174EA6] mr-1.5">प्रश्न {qIdx + 1}.</span>
+                <span className="tabular-nums text-[#C81E1E] mr-1.5">प्रश्न {qIdx + 1}.</span>
                 {q.question}
               </p>
 
@@ -49,7 +49,7 @@ export function McqBlock({ questions }: McqBlockProps) {
                   const isThisCorrect = optIdx === q.correctIndex;
 
                   let buttonStyle =
-                    'bg-white border-slate-200 text-slate-800 hover:border-[#174EA6] hover:bg-[#174EA6]/5';
+                    'bg-white border-slate-200 text-slate-800 hover:border-[#C81E1E] hover:bg-[#C81E1E]/5';
                   if (isAnswered) {
                     if (isThisCorrect) {
                       buttonStyle = 'bg-emerald-50 border-emerald-600 text-emerald-950 font-medium';
@@ -94,7 +94,7 @@ export function McqBlock({ questions }: McqBlockProps) {
                 <div className="mt-4 p-3.5 rounded-lg bg-white border border-slate-200 text-sm text-slate-700 leading-relaxed">
                   <span
                     className={`font-semibold mr-1.5 ${
-                      isCorrect ? 'text-emerald-800' : 'text-[#174EA6]'
+                      isCorrect ? 'text-emerald-800' : 'text-[#C81E1E]'
                     }`}
                   >
                     {isCorrect ? 'सही जवाब — व्याख्या:' : 'सही उत्तर की व्याख्या:'}

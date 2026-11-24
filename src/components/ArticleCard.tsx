@@ -39,7 +39,7 @@ export function ArticleCard({ article, onNavigate }: ArticleCardProps) {
                 e.preventDefault();
                 onNavigate(`/category/${category.slug}`);
               }}
-              className="font-semibold text-[#174EA6] hover:underline"
+              className="font-semibold text-[#C81E1E] hover:underline"
             >
               {category.nameHi}
             </a>
@@ -52,7 +52,7 @@ export function ArticleCard({ article, onNavigate }: ArticleCardProps) {
           <span className="tabular-nums">{article.readTimeMinutes} मिनट पठन</span>
         </div>
 
-        <h3 className="text-lg font-bold text-slate-900 leading-snug mb-2 group-hover:text-[#174EA6] transition-colors">
+        <h3 className="text-lg font-bold text-slate-900 leading-snug mb-2 group-hover:text-[#C81E1E] transition-colors">
           <a
             href={articlePath}
             onClick={(e) => {
@@ -75,13 +75,13 @@ export function ArticleCard({ article, onNavigate }: ArticleCardProps) {
               e.preventDefault();
               onNavigate(articlePath);
             }}
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#174EA6] hover:text-[#123D85] transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C81E1E] hover:text-[#991B1B] transition-colors"
           >
             <span>पूरा पढ़ें</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </a>
           {article.pdfAvailable && (
-            <span className="text-xs font-medium text-[#B45309]">PDF उपलब्ध</span>
+            <span className="text-xs font-medium text-slate-700">PDF उपलब्ध</span>
           )}
         </div>
       </div>

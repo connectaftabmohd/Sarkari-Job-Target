@@ -34,9 +34,16 @@ export function Footer({ onNavigate }: FooterProps) {
             <a
               href="/"
               onClick={(e) => handleLink(e, '/')}
-              className="inline-flex items-center gap-2 text-lg font-bold text-slate-900"
+              className="inline-flex items-center gap-2.5 text-lg font-bold text-slate-900"
             >
-              <span>Sarkari Job Target</span>
+              <img
+                src="/assets/aistudio/Sarkari_Job_Target_02a57cf7.jfif"
+                alt="Sarkari Job Target Logo"
+                className="w-9 h-9 object-contain rounded bg-white border border-slate-200 shrink-0"
+              />
+              <span>
+                Sarkari Job <span className="text-[#C81E1E]">Target</span>
+              </span>
             </a>
             <p className="mt-3 text-sm leading-relaxed text-slate-600 max-w-md">
               UPSSSC PET, UP Police, SSC, Railway, UPPSC, UPSC, CTET, Lekhpal और बैंकिंग परीक्षाओं की तैयारी करने वाले विद्यार्थियों के लिए सरल हिंदी में प्रमाणित अध्ययन सामग्री एवं परीक्षा मार्गदर्शन।
@@ -46,7 +53,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#174EA6] transition-colors"
+                className="hover:text-[#C81E1E] transition-colors"
               >
                 YouTube
               </a>
@@ -55,7 +62,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 href="https://t.me"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#174EA6] transition-colors"
+                className="hover:text-[#C81E1E] transition-colors"
               >
                 Telegram
               </a>
@@ -64,7 +71,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 href="https://x.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#174EA6] transition-colors"
+                className="hover:text-[#C81E1E] transition-colors"
               >
                 X (Twitter)
               </a>
@@ -73,7 +80,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#174EA6] transition-colors"
+                className="hover:text-[#C81E1E] transition-colors"
               >
                 Facebook
               </a>
@@ -91,7 +98,7 @@ export function Footer({ onNavigate }: FooterProps) {
                   <a
                     href={item.path}
                     onClick={(e) => handleLink(e, item.path)}
-                    className="text-slate-600 hover:text-[#174EA6] transition-colors"
+                    className="text-slate-600 hover:text-[#C81E1E] transition-colors"
                   >
                     {item.label}
                   </a>
@@ -111,7 +118,7 @@ export function Footer({ onNavigate }: FooterProps) {
                   <a
                     href={item.path}
                     onClick={(e) => handleLink(e, item.path)}
-                    className="text-slate-600 hover:text-[#174EA6] transition-colors"
+                    className="text-slate-600 hover:text-[#C81E1E] transition-colors"
                   >
                     {item.label}
                   </a>
@@ -121,7 +128,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 <a
                   href="/editorial-cms-architecture"
                   onClick={(e) => handleLink(e, '/editorial-cms-architecture')}
-                  className="text-slate-600 hover:text-[#174EA6] transition-colors"
+                  className="text-slate-600 hover:text-[#C81E1E] transition-colors"
                 >
                   CMS व एडमिन आर्किटेक्चर (डेमो व्यू)
                 </a>
@@ -133,11 +140,11 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="mt-10 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-500">
           <p>© 2026 Sarkari Job Target. सर्वाधिकार सुरक्षित। यह एक स्वतंत्र शैक्षणिक प्रकाशन है।</p>
           <div className="flex items-center gap-4">
-            <a href="/sitemap.xml" className="hover:text-[#174EA6]">
+            <a href="/sitemap.xml" className="hover:text-[#C81E1E]">
               XML Sitemap
             </a>
             <span aria-hidden="true">·</span>
-            <a href="/robots.txt" className="hover:text-[#174EA6]">
+            <a href="/robots.txt" className="hover:text-[#C81E1E]">
               Robots.txt
             </a>
           </div>

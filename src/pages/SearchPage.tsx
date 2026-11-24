@@ -65,12 +65,12 @@ export function SearchPage({ initialQuery, onNavigate }: SearchPageProps) {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="यहां टॉपिक या परीक्षा खोजें"
-              className="w-full h-11 pl-11 pr-4 rounded-lg border border-slate-300 bg-white text-sm text-slate-900 focus:outline-none focus:border-[#174EA6]"
+              className="w-full h-11 pl-11 pr-4 rounded-lg border border-slate-300 bg-white text-sm text-slate-900 focus:outline-none focus:border-[#C81E1E]"
             />
           </div>
           <button
             type="submit"
-            className="h-11 px-5 rounded-lg bg-[#174EA6] text-white text-sm font-semibold hover:bg-[#123D85] transition-colors whitespace-nowrap shrink-0"
+            className="h-11 px-5 rounded-lg bg-[#C81E1E] text-white text-sm font-semibold hover:bg-[#991B1B] transition-colors whitespace-nowrap shrink-0"
           >
             खोजें
           </button>
@@ -86,7 +86,7 @@ export function SearchPage({ initialQuery, onNavigate }: SearchPageProps) {
                 setQuery(tag);
                 onNavigate(`/search?q=${encodeURIComponent(tag)}`);
               }}
-              className="px-2.5 py-1 rounded border border-slate-200 bg-slate-50 hover:border-[#174EA6] hover:text-[#174EA6] transition-colors"
+              className="px-2.5 py-1 rounded border border-slate-200 bg-slate-50 hover:border-[#C81E1E] hover:text-[#C81E1E] transition-colors"
             >
               {tag}
             </button>

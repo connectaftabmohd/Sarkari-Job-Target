@@ -48,7 +48,7 @@ export function ArticlePage({ slug, onNavigate }: ArticlePageProps) {
         <button
           type="button"
           onClick={() => onNavigate('/')}
-          className="mt-6 px-5 py-2.5 rounded-lg bg-[#174EA6] text-white text-sm font-semibold hover:bg-[#123D85] transition-colors"
+          className="mt-6 px-5 py-2.5 rounded-lg bg-[#C81E1E] text-white text-sm font-semibold hover:bg-[#991B1B] transition-colors"
         >
           होमपेज पर वापस जाएं
         </button>
@@ -129,7 +129,7 @@ export function ArticlePage({ slug, onNavigate }: ArticlePageProps) {
                   e.preventDefault();
                   onNavigate('/');
                 }}
-                className="hover:text-[#174EA6] hover:underline"
+                className="hover:text-[#C81E1E] hover:underline"
               >
                 होम
               </a>
@@ -146,7 +146,7 @@ export function ArticlePage({ slug, onNavigate }: ArticlePageProps) {
                       e.preventDefault();
                       onNavigate(`/category/${category.slug}`);
                     }}
-                    className="hover:text-[#174EA6] hover:underline font-medium text-[#174EA6]"
+                    className="hover:text-[#C81E1E] hover:underline font-medium text-[#C81E1E]"
                   >
                     {category.nameHi}
                   </a>
@@ -224,7 +224,7 @@ export function ArticlePage({ slug, onNavigate }: ArticlePageProps) {
             <button
               type="button"
               onClick={handlePdfDownload}
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#174EA6] text-white text-sm font-semibold hover:bg-[#123D85] transition-colors whitespace-nowrap shrink-0"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#C81E1E] text-white text-sm font-semibold hover:bg-[#991B1B] transition-colors whitespace-nowrap shrink-0"
             >
               <Download className="w-4 h-4" aria-hidden="true" />
               <span>{downloadedNote ? 'डाउनलोड पूर्ण' : 'नोट्स डाउनलोड करें'}</span>
@@ -239,7 +239,7 @@ export function ArticlePage({ slug, onNavigate }: ArticlePageProps) {
             className="mb-8 p-5 rounded-lg border border-slate-200 bg-white"
           >
             <div className="flex items-center gap-2 text-sm font-bold text-slate-900 mb-3">
-              <List className="w-4 h-4 text-[#174EA6]" aria-hidden="true" />
+              <List className="w-4 h-4 text-[#C81E1E]" aria-hidden="true" />
               <span>विषय-सूची (Table of Contents)</span>
             </div>
             <ol className="space-y-2 text-sm">
@@ -248,7 +248,7 @@ export function ArticlePage({ slug, onNavigate }: ArticlePageProps) {
                   <button
                     type="button"
                     onClick={() => handleTocClick(sec.id)}
-                    className="text-left text-[#174EA6] hover:underline font-medium"
+                    className="text-left text-[#C81E1E] hover:underline font-medium"
                   >
                     <span className="tabular-nums mr-1.5 text-slate-500">{idx + 1}.</span>
                     {sec.heading}
@@ -260,7 +260,7 @@ export function ArticlePage({ slug, onNavigate }: ArticlePageProps) {
                   <button
                     type="button"
                     onClick={() => handleTocClick('mcq-practice-heading')}
-                    className="text-left text-[#174EA6] hover:underline font-medium"
+                    className="text-left text-[#C81E1E] hover:underline font-medium"
                   >
                     <span className="tabular-nums mr-1.5 text-slate-500">
                       {article.sections.length + 1}.
@@ -302,8 +302,8 @@ export function ArticlePage({ slug, onNavigate }: ArticlePageProps) {
               )}
 
               {sec.infoBox && (
-                <div className="mt-5 p-4 sm:p-5 rounded-lg border border-[#174EA6]/25 bg-[#174EA6]/[0.04]">
-                  <p className="text-sm font-bold text-[#174EA6] mb-1">{sec.infoBox.title}</p>
+                <div className="mt-5 p-4 sm:p-5 rounded-lg border border-[#C81E1E]/25 bg-[#C81E1E]/[0.04]">
+                  <p className="text-sm font-bold text-[#C81E1E] mb-1">{sec.infoBox.title}</p>
                   <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                     {sec.infoBox.content}
                   </p>
@@ -358,7 +358,7 @@ export function ArticlePage({ slug, onNavigate }: ArticlePageProps) {
         {/* Social Sharing Buttons */}
         <div className="mt-10 pt-6 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-sm font-semibold text-slate-900">
-            <Share2 className="w-4 h-4 text-[#174EA6]" aria-hidden="true" />
+            <Share2 className="w-4 h-4 text-[#C81E1E]" aria-hidden="true" />
             <span>यह लेख अपने सहपाठियों के साथ साझा करें:</span>
           </div>
           <div className="flex flex-wrap items-center gap-2">
@@ -366,7 +366,7 @@ export function ArticlePage({ slug, onNavigate }: ArticlePageProps) {
               href={`https://wa.me/?text=${encodeURIComponent(`${article.title} - ${shareUrl}`)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 py-2 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 hover:border-[#174EA6] hover:text-[#174EA6] transition-colors"
+              className="px-3.5 py-2 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 hover:border-[#C81E1E] hover:text-[#C81E1E] transition-colors"
             >
               WhatsApp
             </a>
@@ -374,7 +374,7 @@ export function ArticlePage({ slug, onNavigate }: ArticlePageProps) {
               href={`https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(article.title)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 py-2 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 hover:border-[#174EA6] hover:text-[#174EA6] transition-colors"
+              className="px-3.5 py-2 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 hover:border-[#C81E1E] hover:text-[#C81E1E] transition-colors"
             >
               Telegram
             </a>
@@ -382,14 +382,14 @@ export function ArticlePage({ slug, onNavigate }: ArticlePageProps) {
               href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(article.title)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 py-2 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 hover:border-[#174EA6] hover:text-[#174EA6] transition-colors"
+              className="px-3.5 py-2 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 hover:border-[#C81E1E] hover:text-[#C81E1E] transition-colors"
             >
               X (Twitter)
             </a>
             <button
               type="button"
               onClick={handleCopyLink}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 hover:border-[#174EA6] hover:text-[#174EA6] transition-colors"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 hover:border-[#C81E1E] hover:text-[#C81E1E] transition-colors"
             >
               {copiedLink ? (
                 <>

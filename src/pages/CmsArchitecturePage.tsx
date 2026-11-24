@@ -42,7 +42,7 @@ export function CmsArchitecturePage({ onNavigate }: CmsArchitecturePageProps) {
                 e.preventDefault();
                 onNavigate('/');
               }}
-              className="hover:text-[#174EA6] hover:underline"
+              className="hover:text-[#C81E1E] hover:underline"
             >
               होम
             </a>
@@ -81,7 +81,7 @@ export function CmsArchitecturePage({ onNavigate }: CmsArchitecturePageProps) {
       {/* Planned Admin Capabilities */}
       <section className="mb-10">
         <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-          <Database className="w-5 h-5 text-[#174EA6]" aria-hidden="true" />
+          <Database className="w-5 h-5 text-[#C81E1E]" aria-hidden="true" />
           <span>भविष्य के CMS / एडमिन मॉड्यूल की रूपरेखा</span>
         </h2>
 
@@ -132,7 +132,7 @@ export function CmsArchitecturePage({ onNavigate }: CmsArchitecturePageProps) {
       {/* Schema Table */}
       <section className="mb-10">
         <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-          <FileCode2 className="w-5 h-5 text-[#174EA6]" aria-hidden="true" />
+          <FileCode2 className="w-5 h-5 text-[#C81E1E]" aria-hidden="true" />
           <span>Article डेटा मॉडल (CMS-Ready TypeScript Schema)</span>
         </h2>
         <div className="overflow-x-auto border border-slate-200 rounded-lg">
@@ -147,7 +147,7 @@ export function CmsArchitecturePage({ onNavigate }: CmsArchitecturePageProps) {
             <tbody className="divide-y divide-slate-200 bg-white">
               {POST_SCHEMA_FIELDS.map((row) => (
                 <tr key={row.field}>
-                  <td className="px-4 py-3 font-semibold text-[#174EA6]">{row.field}</td>
+                  <td className="px-4 py-3 font-semibold text-[#C81E1E]">{row.field}</td>
                   <td className="px-4 py-3 text-slate-700 font-mono text-xs">{row.type}</td>
                   <td className="px-4 py-3 text-slate-600">{row.description}</td>
                 </tr>

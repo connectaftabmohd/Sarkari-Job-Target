@@ -28,7 +28,7 @@ export function ExamUpdatesPage({ onNavigate }: ExamUpdatesPageProps) {
                 e.preventDefault();
                 onNavigate('/');
               }}
-              className="hover:text-[#174EA6] hover:underline"
+              className="hover:text-[#C81E1E] hover:underline"
             >
               होम
             </a>
@@ -58,7 +58,7 @@ export function ExamUpdatesPage({ onNavigate }: ExamUpdatesPageProps) {
             className="p-5 sm:p-6 border border-slate-200 rounded-lg bg-white"
           >
             <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500 mb-2">
-              <span className="font-semibold text-[#174EA6]">{upd.categoryLabel}</span>
+              <span className="font-semibold text-[#C81E1E]">{upd.categoryLabel}</span>
               <span aria-hidden="true">·</span>
               <span>{upd.organization}</span>
               <span aria-hidden="true">·</span>
@@ -83,7 +83,7 @@ export function ExamUpdatesPage({ onNavigate }: ExamUpdatesPageProps) {
 
             <div className="mt-5 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
               {upd.lastDateDisplay ? (
-                <span className="text-xs font-semibold text-[#B45309]">
+                <span className="text-xs font-semibold text-[#C81E1E]">
                   {upd.lastDateDisplay}
                 </span>
               ) : (
@@ -97,7 +97,7 @@ export function ExamUpdatesPage({ onNavigate }: ExamUpdatesPageProps) {
                     e.preventDefault();
                     onNavigate(`/article/${upd.linkedArticleSlug}`);
                   }}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#174EA6] hover:underline"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C81E1E] hover:underline"
                 >
                   <span>संपूर्ण तैयारी लेख पढ़ें</span>
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />

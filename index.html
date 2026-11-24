@@ -3,6 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        window.addEventListener(
+          'error',
+          function (event) {
+            if (
+              event &&
+              typeof event.filename === 'string' &&
+              (event.filename.indexOf('chrome-extension://') === 0 ||
+                event.filename.indexOf('moz-extension://') === 0)
+            ) {
+              event.stopImmediatePropagation();
+              event.preventDefault();
+            }
+          },
+          true
+        );
+        try {
+          var own = Object.getOwnPropertyDescriptor(window, 'fetch');
+          var proto = Object.getPrototypeOf(window);
+          var protoDesc = proto ? Object.getOwnPropertyDescriptor(proto, 'fetch') : null;
+          var desc = own || protoDesc;
+          if (desc && desc.get && !desc.set && (!own || own.configurable)) {
+            var origGet = desc.get;
+            var overrideFetch = null;
+            Object.defineProperty(window, 'fetch', {
+              configurable: true,
+              enumerable: true,
+              get: function () {
+                return overrideFetch || origGet.call(window);
+              },
+              set: function (fn) {
+                if (typeof fn === 'function') {
+                  overrideFetch = fn;
+                }
+              },
+            });
+          }
+        } catch (_) {}
+      })();
+    </script>
     <title>Sarkari Job Target – प्रतियोगी परीक्षाओं की तैयारी का हिंदी मंच</title>
     <meta
       name="description"
@@ -11,6 +52,7 @@
     <meta name="robots" content="index, follow" />
     <meta name="google-site-verification" content="SARKARI_JOB_TARGET_GSC_VERIFICATION_TOKEN" />
     <link rel="canonical" href="https://sarkarijobtarget.in/" />
+    <link rel="icon" type="image/jpeg" href="/assets/aistudio/Sarkari_Job_Target_02a57cf7.jfif" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -39,7 +81,7 @@
       rel="stylesheet"
     />
   </head>
-  <body class="bg-white text-slate-900 antialiased selection:bg-[#174EA6]/15 selection:text-[#174EA6]">
+  <body class="bg-white text-slate-900 antialiased selection:bg-[#C81E1E]/15 selection:text-[#991B1B]">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

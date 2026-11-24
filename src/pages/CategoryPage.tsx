@@ -36,7 +36,7 @@ export function CategoryPage({ slug, onNavigate }: CategoryPageProps) {
         <button
           type="button"
           onClick={() => onNavigate('/')}
-          className="mt-6 px-5 py-2.5 rounded-lg bg-[#174EA6] text-white text-sm font-semibold hover:bg-[#123D85] transition-colors"
+          className="mt-6 px-5 py-2.5 rounded-lg bg-[#C81E1E] text-white text-sm font-semibold hover:bg-[#991B1B] transition-colors"
         >
           होमपेज पर जाएं
         </button>
@@ -81,7 +81,7 @@ export function CategoryPage({ slug, onNavigate }: CategoryPageProps) {
                 e.preventDefault();
                 onNavigate('/');
               }}
-              className="hover:text-[#174EA6] hover:underline"
+              className="hover:text-[#C81E1E] hover:underline"
             >
               होम
             </a>
@@ -97,7 +97,7 @@ export function CategoryPage({ slug, onNavigate }: CategoryPageProps) {
 
       {/* Category Header */}
       <header className="pb-8 border-b border-slate-200 mb-8">
-        <div className="text-xs font-semibold text-[#B45309] mb-1.5">{category.nameEn}</div>
+        <div className="text-xs font-semibold text-[#C81E1E] mb-1.5">{category.nameEn}</div>
         <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">{category.nameHi}</h1>
         <p className="mt-2.5 text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
           {category.descriptionHi}
@@ -117,8 +117,8 @@ export function CategoryPage({ slug, onNavigate }: CategoryPageProps) {
                 }}
                 className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium border transition-colors whitespace-nowrap shrink-0 ${
                   active
-                    ? 'bg-[#174EA6] border-[#174EA6] text-white'
-                    : 'bg-white border-slate-200 text-slate-700 hover:border-[#174EA6] hover:text-[#174EA6]'
+                    ? 'bg-[#C81E1E] border-[#C81E1E] text-white'
+                    : 'bg-white border-slate-200 text-slate-700 hover:border-[#C81E1E] hover:text-[#C81E1E]'
                 }`}
               >
                 {cat.nameHi}
@@ -150,7 +150,7 @@ export function CategoryPage({ slug, onNavigate }: CategoryPageProps) {
                 type="button"
                 disabled={safePage <= 1}
                 onClick={() => setPage((p) => Math.max(1, p - 1))}
-                className="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg border border-slate-200 text-xs sm:text-sm font-medium text-slate-700 hover:border-[#174EA6] disabled:opacity-40 disabled:pointer-events-none"
+                className="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg border border-slate-200 text-xs sm:text-sm font-medium text-slate-700 hover:border-[#C81E1E] disabled:opacity-40 disabled:pointer-events-none"
               >
                 <ChevronLeft className="w-4 h-4" aria-hidden="true" />
                 <span>पिछला</span>
@@ -164,8 +164,8 @@ export function CategoryPage({ slug, onNavigate }: CategoryPageProps) {
                   aria-current={num === safePage ? 'page' : undefined}
                   className={`w-9 h-9 rounded-lg text-xs sm:text-sm font-semibold tabular-nums border transition-colors ${
                     num === safePage
-                      ? 'bg-[#174EA6] border-[#174EA6] text-white'
-                      : 'bg-white border-slate-200 text-slate-700 hover:border-[#174EA6]'
+                      ? 'bg-[#C81E1E] border-[#C81E1E] text-white'
+                      : 'bg-white border-slate-200 text-slate-700 hover:border-[#C81E1E]'
                   }`}
                 >
                   {num}
@@ -176,7 +176,7 @@ export function CategoryPage({ slug, onNavigate }: CategoryPageProps) {
                 type="button"
                 disabled={safePage >= totalPages}
                 onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-                className="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg border border-slate-200 text-xs sm:text-sm font-medium text-slate-700 hover:border-[#174EA6] disabled:opacity-40 disabled:pointer-events-none"
+                className="inline-flex items-center gap-1 px-3.5 py-2 rounded-lg border border-slate-200 text-xs sm:text-sm font-medium text-slate-700 hover:border-[#C81E1E] disabled:opacity-40 disabled:pointer-events-none"
               >
                 <span>अगला</span>
                 <ChevronRight className="w-4 h-4" aria-hidden="true" />

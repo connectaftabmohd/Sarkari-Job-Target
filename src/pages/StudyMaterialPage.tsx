@@ -61,7 +61,7 @@ export function StudyMaterialPage({ initialType, onNavigate }: StudyMaterialPage
                 e.preventDefault();
                 onNavigate('/');
               }}
-              className="hover:text-[#174EA6] hover:underline"
+              className="hover:text-[#C81E1E] hover:underline"
             >
               होम
             </a>
@@ -92,8 +92,8 @@ export function StudyMaterialPage({ initialType, onNavigate }: StudyMaterialPage
               onClick={() => setFilter(f.id)}
               className={`px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium border transition-colors whitespace-nowrap shrink-0 ${
                 filter === f.id
-                  ? 'bg-[#174EA6] border-[#174EA6] text-white'
-                  : 'bg-white border-slate-200 text-slate-700 hover:border-[#174EA6]'
+                  ? 'bg-[#C81E1E] border-[#C81E1E] text-white'
+                  : 'bg-white border-slate-200 text-slate-700 hover:border-[#C81E1E]'
               }`}
             >
               {f.label}
@@ -110,7 +110,7 @@ export function StudyMaterialPage({ initialType, onNavigate }: StudyMaterialPage
           >
             <div>
               <div className="flex items-center gap-2 text-xs text-slate-500 mb-2">
-                <span className="font-semibold text-[#174EA6]">{item.typeLabelHi}</span>
+                <span className="font-semibold text-[#C81E1E]">{item.typeLabelHi}</span>
                 <span aria-hidden="true">·</span>
                 <span>{item.subjectHi}</span>
                 <span aria-hidden="true">·</span>
@@ -118,7 +118,7 @@ export function StudyMaterialPage({ initialType, onNavigate }: StudyMaterialPage
               </div>
 
               <h2 className="text-lg font-bold text-slate-900 leading-snug">{item.title}</h2>
-              <p className="mt-1.5 text-xs font-medium text-[#B45309]">
+              <p className="mt-1.5 text-xs font-medium text-slate-700">
                 लक्ष्य परीक्षा: {item.examName} · {item.pagesOrQuestions}
               </p>
               <p className="mt-3 text-sm text-slate-600 leading-relaxed">{item.description}</p>
@@ -127,7 +127,7 @@ export function StudyMaterialPage({ initialType, onNavigate }: StudyMaterialPage
                 {item.summaryContent.map((point, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <FileText
-                      className="w-4 h-4 text-[#174EA6] mt-0.5 shrink-0"
+                      className="w-4 h-4 text-[#C81E1E] mt-0.5 shrink-0"
                       aria-hidden="true"
                     />
                     <span>{point}</span>
@@ -144,7 +144,7 @@ export function StudyMaterialPage({ initialType, onNavigate }: StudyMaterialPage
                   setDownloadedId(item.id);
                   setTimeout(() => setDownloadedId(null), 2500);
                 }}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#174EA6] text-white text-xs sm:text-sm font-semibold hover:bg-[#123D85] transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#C81E1E] text-white text-xs sm:text-sm font-semibold hover:bg-[#991B1B] transition-colors"
               >
                 <Download className="w-4 h-4" aria-hidden="true" />
                 <span>{downloadedId === item.id ? 'डाउनलोड पूर्ण' : 'नोट्स डाउनलोड करें'}</span>
@@ -157,7 +157,7 @@ export function StudyMaterialPage({ initialType, onNavigate }: StudyMaterialPage
                     e.preventDefault();
                     onNavigate(`/article/${item.linkedArticleSlug}`);
                   }}
-                  className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-[#174EA6] hover:underline"
+                  className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-[#C81E1E] hover:underline"
                 >
                   <span>विस्तृत लेख पढ़ें</span>
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { Component, ErrorInfo, ReactNode, useCallback, useEffect, useState } from 'react';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { ArticlePage } from './pages/ArticlePage';
@@ -9,6 +9,53 @@ import { HomePage } from './pages/HomePage';
 import { SearchPage } from './pages/SearchPage';
 import { StaticInfoPage } from './pages/StaticInfoPage';
 import { StudyMaterialPage } from './pages/StudyMaterialPage';
+
+interface ErrorBoundaryProps {
+  children: ReactNode;
+  onReset: () => void;
+}
+
+interface ErrorBoundaryState {
+  hasError: boolean;
+}
+
+class AppErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  state: ErrorBoundaryState = { hasError: false };
+
+  static getDerivedStateFromError(): ErrorBoundaryState {
+    return { hasError: true };
+  }
+
+  componentDidCatch(_error: Error, _info: ErrorInfo) {
+    // Handled gracefully via fallback UI
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="max-w-xl mx-auto px-4 py-16 text-center">
+          <h1 className="text-xl font-bold text-slate-900">
+            पृष्ठ लोड करने में अस्थायी समस्या आई
+          </h1>
+          <p className="mt-2 text-sm text-slate-600">
+            कृपया होमपेज पर वापस जाएं या पृष्ठ को पुनः लोड करें।
+          </p>
+          <button
+            type="button"
+            onClick={() => {
+              this.setState({ hasError: false });
+              this.props.onReset();
+            }}
+            className="mt-5 px-5 py-2.5 rounded-lg bg-[#C81E1E] text-white text-sm font-semibold hover:bg-[#991B1B] transition-colors"
+          >
+            होमपेज पर जाएं
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 function getCurrentLocation(): { pathname: string; search: string } {
   if (typeof window === 'undefined') {
@@ -106,7 +153,7 @@ export default function App() {
         <button
           type="button"
           onClick={() => navigate('/')}
-          className="mt-6 px-5 py-2.5 rounded-lg bg-[#174EA6] text-white text-sm font-semibold hover:bg-[#123D85] transition-colors"
+          className="mt-6 px-5 py-2.5 rounded-lg bg-[#C81E1E] text-white text-sm font-semibold hover:bg-[#991B1B] transition-colors"
         >
           होमपेज पर जाएं
         </button>
@@ -117,7 +164,9 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-900">
       <Header currentPath={location.pathname} onNavigate={navigate} />
-      <main className="flex-1">{renderPage()}</main>
+      <main className="flex-1">
+        <AppErrorBoundary onReset={() => navigate('/')}>{renderPage()}</AppErrorBoundary>
+      </main>
       <Footer onNavigate={navigate} />
     </div>
   );
